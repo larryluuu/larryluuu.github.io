@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>02dynamicStyleImg.html</title>
+    <style>
+        .s {
+            -webkit-filter: grayscale(1);  
+            
+        }
+        .n {
+            -webkit-filter: grayscale(0);  
+        }
+    
+    </style>
+    <script>
+      // http://blog.shihshih.com/css-filter/
+      window.onload = function () {
+      var stars = document.getElementsByTagName("img");
+      
+      for(var i = 0 ; i < stars.length; i++){
+       stars[i].onmouseover = function () { mouseOver(this.id) };
+       stars[i].onmouseout = function () { mouseOut(this.id) };
+       stars[i].onclick = function () { click(this.id) };
+      }
+      };
+      function mouseOver(x) {
+      var stars = document.getElementsByTagName("img");
+        for(var i = 0 ; i < x ; i++){
+          stars[i].className = "n";
+          document.getElementById("idsp").textContent = "評分中..."
+}
+      }
+      function mouseOut(y) {
+  var stars = document.getElementsByTagName("img");
+        for(var i = 0 ; i < y ; i++){
+          stars[i].className = "s";
+          }
+      }
+      function click(z) {
+          if (!z) { } else {
+              document.getElementById("idsp").textContent =  z + "顆星"
+              var stars = document.getElementsByTagName("img");
+          }
+
+          for (var i = 0 ; i < stars.length; i++) {
+              stars[i].onmouseover = function () { mouseOver() };
+              stars[i].onmouseout = function () { mouseOut(th) };
+              stars[i].onclick = function () { click() };
+          }
+          }
+          
+    </script>
+</head>
+<body>
+
+        <img id="1" class="s" src="image/chngstar.gif" />
+        <img id="2" class="s" src="image/chngstar.gif" />
+        <img id="3" class="s" src="image/chngstar.gif" />
+        <img id="4" class="s" src="image/chngstar.gif" />
+        <img id="5" class="s" src="image/chngstar.gif" />
+
+        <br>
+        <span id="idsp" style="font-size:30px;color:blue"></span>
+ 
+</body>
+</html>

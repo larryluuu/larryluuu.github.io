@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首頁</title>
+	<meta charset="utf-8" />
+    <link rel="shortcut icon" href="image/Mickey Christmas.ico"> 
+    <style>
+        @import url(style/StyleSheet.css);
+    </style>
+    
+
+        <!--カウンター画像からは配布サイトへリンクが設定されています。また、誤作動、誤表示の原因となりますのでコードの改変、改行は行わないで下さい。
+このコメント部分は削除して頂いても結構です。-->
+<script language ="Javascript">
+document.write('<a href="http://www.free-counter.jp/"></a>');</script>
+    <noscript>
+        <a href="http://hrs.f-counter.com/" >カウンター</a><a href="http://hqm.f-counter.com/">カウンター</a>
+    </noscript>
+   
+
+
+
+    
+</head>
+<body>
+
+    <div id="allpage">
+        <header>
+            <nav>
+                <nobr id="people">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td><img src="https://www.f-counter.net/ani1/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></td>
+                    <td><img src="https://www.f-counter.net/ani2/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></td>
+                </tr>
+            </tbody>
+        </table>
+    </nobr>
+                <ul class="menu">
+                    <a href="Index.html"><img class="img" src="image/comeon.jpg" width="60" /></a>
+                    <li><a href="homework1.html">99Method</a></li>
+                    <li><a href="homework2.html">FormCheck</a></li>
+                    <li><a href="homework3.html">StarScore</a></li>
+                    <li><a href="homework4.html">AdRotation</a></li>
+                    <li><a href="homework5.html">Calender</a></li>
+                    <a href=""><img class="img2" src="image/serch.png" width="25" /></a>
+                </ul>
+                <img src="image/toystitle.jpg" width="1024" height="300" />
+            </nav>
+        </header>
+
+        <script>
+      function rate(obj, oEvent) {
+            //==================
+            // 圖片地址設置
+            //==================
+            var imgSrc = "image/star.gif" ; //沒有填色的星星
+            var imgSrc_2 = "image/chngstar.gif"; //打分後有顏色的星星
+           
+            //---------------------------------------------------------------------------
+            if (obj.rateFlag) return; 
+            var e = oEvent || window.event;
+            var target = e.target || e.srcElement;
+            var imgArray = obj.getElementsByTagName("img");
+            for (var i = 0; i < imgArray.length; i++) {
+                imgArray[i]._num = i;
+                imgArray[i].onclick = function () { 
+                 if (obj.rateFlag) return;
+                 obj.rateFlag = true;
+                document.getElementById("mapdiv").innerHTML = "您給了" + (this._num + 1) + "分";
+                
+                };
+            }
+            if (target.tagName == "IMG") {
+                for (var j = 0; j < imgArray.length; j++) {
+                    if (j <= target._num) {
+                        imgArray[j].src = imgSrc_2;
+                        document.getElementById("mapdiv").innerHTML = "評分中... 目前您給: " + (j + 1) + " 分";
+                        
+                    } else {
+                        imgArray[j].src = imgSrc;
+                    }
+                }
+            } else {
+                for (var k = 0; k < imgArray.length; k++) {
+                    imgArray[k].src = imgSrc;
+                    
+                    
+                }
+            }
+            
+        }
+
+    </script>
+
+        <p class="starWall" onmouseover="rate(this,event)">
+                <img src="image/star.gif" />
+                <img src="image/star.gif" />
+                <img src="image/star.gif" />
+                <img src="image/star.gif" />
+                <img src="image/star.gif" />
+                <div id="mapdiv" style="font-size:20px;color:darkblue;float:left;width:auto;height:auto;margin-left:265px;"></div><br><br><br>
+        </div>
+
+        <footer>
+            <h2>&copy;TROYLU.INC.All rights reserved.</h2>
+        </footer>
+
+    </div>
+</body>
+</html>

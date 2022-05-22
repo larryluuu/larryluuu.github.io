@@ -1,0 +1,87 @@
+﻿ 
+<style>
+
+body{     
+            font-size:90%
+        }
+
+        *{margin:0;padding:0;font-size:100%;}
+
+        #allpage{margin:auto;
+                 width:1024px;
+        }
+
+        .menu {
+            width: 100%;
+            overflow: auto;
+            background-color: white;
+            list-style-type: none;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom:2px solid red;
+            margin:auto;
+           
+        }
+
+            .menu li {
+                float: left;
+                width: 9em;
+                border-right: 1px solid #ffffff;
+            }
+
+                .menu li a {
+                    display:block;
+                    width: 100%;
+                    line-height: 2.5em;
+                    color: black;
+                    text-align: center;
+                    text-decoration: none;
+                    font-family:Impact;
+                    padding-top:7px;
+                    font-size:22px;
+                }
+                .menu li a:hover{color:	#FF0000;
+                             background-color:white;    
+                }
+
+              .img{float:left}
+              .img2{float:right;
+                        padding:22px;
+              }
+              .title{background-color:black;
+                     font-family:Britannic Bold;
+                     line-height:2.5em;
+                     color:white;
+
+              }
+
+              
+
+              article{float:left;
+                      width:550px;
+              }
+              aside{float:right;
+                    width:400px;
+                    background-color:black;
+                    color:white;
+              }
+              .asidetitle{font-family:Britannic Bold;
+                              line-height:2.5em;
+              }
+        footer {
+            width: 100%;
+            background-color: palevioletred;
+            line-height: 2.5em;
+            text-align: center;
+            color: black;
+            font-family:Britannic Bold;
+           
+        }
+        #content {
+            width: 100%;
+            overflow: auto;
+        }
+
+        #people{float:right}
+        
+           </style>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首頁</title>
+	<meta charset="utf-8" />
+    <link rel="shortcut icon" href="image/Mickey Christmas.ico"> 
+    <style>
+        @import url(style/StyleSheet.css);
+        
+   #adDiv{
+            text-align: center;
+        }
+        #adBut{
+            text-align: center;
+        }
+        .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button1:hover {
+    background-color: #555555;
+    color: white;
+}
+
+
+    </style>
+    
+    <script>
+ function onYouTubeIframeAPIReady() {
+  var player;
+  player = new YT.Player('muteYouTubeVideoPlayer', {
+      videoId: 'ZZv1vki4ou4', // YouTube Video ID
+    width: 400,               // Player width (in px)
+    height: 300,              // Player height (in px)
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 0,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 1,  // Hide the Youtube Logo
+      loop: 1,            // Run the video in a loop
+      fs: 1,              // Hide the full screen button
+      cc_load_policy: 1, // Hide closed captions
+      iv_load_policy: 1,  // Hide the Video Annotations
+      autohide: 1         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+      }
+    }
+  });
+ }
+
+  var jsImg = new Array("image/1.jpg", "image/2.jpg", "image/3.jpg", "image/4.jpg", "image/5.jpg", "image/6.jpg");
+        var link = new Array("https://tw.buy.yahoo.com/activity/activity950?p=act2-375-b-170704-SUMMERCOOLTHEME", "https://s.yimg.com/wb/images/310EE7687C7AE888B3A2D662DDD85EE82FFB6A4F", "https://tw.buy.yahoo.com/?sub=30", "https://tw.buy.yahoo.com/activity.ashx?p=all2-00-170630-Travelgram", "https://tw.search.buy.yahoo.com/search/shopping/product?p=cumar&qt=ctg&cid=41&clv=1&cid_path=","https://tw.buy.yahoo.com/?catid=11497")
+        var jsImg_len = jsImg.length;
+        var i = 0
+        var timer = setInterval("nextImg()", 5000)
+        function run() {
+            setInterval("nextImg()", 5000)
+        }
+        function nextImg() {
+            document.getElementById("adDiv").innerHTML ="<a target='_blank' href='"+link[i]+"'><img src='"+jsImg[i]+"' width=1024 height=500></a>";
+            i++;
+            if (i >= jsImg_len) i = 0;
+        }
+        function preImg() {
+            document.getElementById("adDiv").innerHTML = "<a target='_blank' href='" + link[i] + "'><img src='" + jsImg[i] + "' width=1024 height=500></a>";
+            i--;
+            if (i < 0) i = 4;
+        }
+
+
+    </script>
+        <!--カウンター画像からは配布サイトへリンクが設定されています。また、誤作動、誤表示の原因となりますのでコードの改変、改行は行わないで下さい。
+このコメント部分は削除して頂いても結構です。-->
+<script language ="Javascript">
+document.write('<a href="http://www.free-counter.jp/"></a>');</script>
+    <noscript>
+        <a href="http://hrs.f-counter.com/" >カウンター</a><a href="http://hqm.f-counter.com/">カウンター</a>
+    </noscript>
+   
+
+
+    </script>
+    
+</head>
+<body onload = "nextImg()">
+
+    <div id="allpage">
+        <header>
+            <nav>
+                <nobr id="people">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td><img src="https://www.f-counter.net/ani1/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></td>
+                    <td><img src="https://www.f-counter.net/ani2/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></td>
+                </tr>
+            </tbody>
+        </table>
+    </nobr>
+                <ul class="menu">
+                    <a href="Index.html"><img class="img" src="image/comeon.jpg" width="60" /></a>
+                    <li><a href="homework1.html">99Method</a></li>
+                    <li><a href="homework2.html">FormCheck</a></li>
+                    <li><a href="homework3.html">StarScore</a></li>
+                    <li><a href="homework4.html">AdRotation</a></li>
+                    <li><a href="homework5.html">Calender</a></li>
+                    <a href=""><img class="img2" src="image/serch.png" width="25" /></a>
+                </ul>
+                <img src="image/toystitle.jpg" width="1024" height="300" />
+            </nav>
+        </header>
+        <div id="content">
+
+                    <div id="AP">
+        <div id="content">
+            <div id="adDiv"></div>
+            
+            <div id="adBut">
+            </br>
+            <button class=button1 onclick="preImg()">
+                <img src="image/previous.png" width="30px" />
+            </button>
+            <button class=button1 onclick="run()">
+                <img src="image/play.png" width="30px"/>
+            </button>
+            <button class=button1 onclick="clearInterval(timer)">
+                <img src="image/pause.png" width="30px"/>
+            </button>
+            <button class=button1 onclick="nextImg()">
+                <img src="image/next.png" width="30px"/>
+            </button>
+            </div>
+        </div>
+    </div>
+
+</div></br>
+        </div>
+        <footer>
+            <h2>&copy;TROYLU.INC.All rights reserved.</h2>
+        </footer>
+
+    </div>
+</body>
+</html>

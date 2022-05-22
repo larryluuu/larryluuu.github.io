@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style>
+        #adDiv{
+            text-align: center;
+        }
+        #adBut{
+            text-align: center;
+        }
+        .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button1:hover {
+    background-color: #555555;
+    color: white;
+}
+    </style>
+    <script>
+        
+        var jsImg = new Array("1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg");
+        var link = new Array("http://google.com", "http://tw.yahoo.com", "http://www.pchome.com.tw", "http://www.mlb.com", "http://www.nfl.com")
+        var jsImg_len = jsImg.length;
+        var i = 0
+        var timer = setInterval("nextImg()", 5000)
+        function run() {
+            setInterval("nextImg()", 5000)
+        }
+        function nextImg() {
+            document.getElementById("adDiv").innerHTML ="<a target='_blank' href='"+link[i]+"'><img src='"+jsImg[i]+"' width=1000 height=500></a>";
+            i++;
+            if (i >= jsImg_len) i = 0;
+        }
+        function preImg() {
+            document.getElementById("adDiv").innerHTML = "<a target='_blank' href='" + link[i] + "'><img src='" + jsImg[i] + "' width=1000 height=500></a>";
+            i--;
+            if (i < 0) i = 4;
+        }
+
+    </script>
+</head>
+<body onload="nextImg()">
+    <div id="AP">
+        <div id="content">
+            <div id="adDiv"></div>
+            
+            <div id="adBut">
+            <button class=button1 onclick="preImg()">
+                <img src="previous.png" width="30px" />
+            </button>
+            <button class=button1 onclick="run()">
+                <img src="play.png" width="30px"/>
+            </button>
+            <button class=button1 onclick="clearInterval(timer)">
+                <img src="pause.png" width="30px"/>
+            </button>
+            <button class=button1 onclick="nextImg()">
+                <img src="next.png" width="30px"/>
+            </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

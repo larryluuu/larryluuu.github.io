@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>首頁</title>
+	<meta charset="utf-8" />
+    <link rel="shortcut icon" href="image/Mickey Christmas.ico"> 
+    <style>
+        @import url(style/StyleSheet.css);
+
+          #table1 {
+            width: 400px;
+            border: 3px solid darkblue;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        td,th{border:1px solid gray;
+              padding:4px;
+              text-align:center;
+              vertical-align:central;
+        }
+
+        thead{border-bottom:3px double 	#FF4500;
+              background-color:gray;
+              color:white
+       
+        }
+
+
+        table {
+            border:2.7px solid #5599FF;
+            background-color:#CCEEFF;
+            color:red;
+            border-collapse:collapse;}
+
+    </style>
+    
+    <script>
+ function onYouTubeIframeAPIReady() {
+  var player;
+  player = new YT.Player('muteYouTubeVideoPlayer', {
+      videoId: 'ZZv1vki4ou4', // YouTube Video ID
+    width: 400,               // Player width (in px)
+    height: 300,              // Player height (in px)
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 0,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 1,  // Hide the Youtube Logo
+      loop: 1,            // Run the video in a loop
+      fs: 1,              // Hide the full screen button
+      cc_load_policy: 1, // Hide closed captions
+      iv_load_policy: 1,  // Hide the Video Annotations
+      autohide: 1         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+      }
+    }
+  });
+ }
+
+
+    </script>
+    
+</head>
+<body>
+
+    <div id="allpage">
+      
+        <header>
+            <nav>
+                <nobr id="people">
+                    <table border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td><a href="http://www.free-counter.jp/"><img src="https://www.f-counter.net/ani1/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></a></td>
+                                <td><a href="http://www.free-counter.jp/"><img src="https://www.f-counter.net/ani2/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </nobr>
+                <ul class="menu">
+                    <a href="Index.html"><img class="img" src="image/comeon.jpg" width="60" /></a>
+                    <li><a href="">Homework1</a></li>
+                    <li><a href="">Homework2</a></li>
+                    <li><a href="">Homework3</a></li>
+                    <li><a href="">Homework4</a></li>
+                    <li><a href="">Homework5</a></li>
+                    <a href=""><img class="img2" src="image/serch.png" width="25" /></a>
+                </ul>
+                <img src="image/toystitle.jpg" width="1024" height="300" />
+            </nav>
+        </header>
+        <div id="content">
+                <article>
+                    <script>
+        document.write('<table>');
+
+        for (var j = 1; j < 10; j++) {
+
+            document.write('<tr>');
+
+            for (var i = 2; i < 10; i++) {
+
+                document.write('<td>' + i + '*' + j + '=' + i * j + '</td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    </script>
+</article>
+            <aside>
+                <h2 class="asidetitle">WATCH TV ADS</h2>
+                <div id="muteYouTubeVideoPlayer">
+
+                    <script async src="https://www.youtube.com/iframe_api"></script>
+                </div>
+               
+            </aside>
+
+
+           
+
+        </div>
+        <footer>
+            <h2>&copy;TROYLU.INC.All rights reserved.</h2>
+        </footer>
+
+    </div>
+</body>
+</html>

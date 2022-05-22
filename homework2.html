@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首頁</title>
+	<meta charset="utf-8" />
+    <link rel="shortcut icon" href="image/Mickey Christmas.ico"> 
+    <style>
+        @import url(style/StyleSheet.css);
+        
+                fieldset {
+        width:550px;
+        border:1px solid #acd6ff;
+        margin:15px;
+        border-radius:20px;
+        }
+
+    .st1{width:360px;
+        border-bottom:0.5px solid #E0E0E0;
+          margin:15px ;padding-bottom:1px;
+        }
+
+    .st2{
+        width:600px;
+        margin:2px;
+        border-radius:20px;
+        border:3px;
+        }
+
+    .t1{width:385px;
+        float:left;
+        text-align:left;
+        padding-right:3px;
+        }
+
+        p {
+            font-size:10px;
+            color:gray;
+        }
+
+
+    em{color:red}
+
+    </style>
+    
+    <script>
+ function onYouTubeIframeAPIReady() {
+  var player;
+  player = new YT.Player('muteYouTubeVideoPlayer', {
+      videoId: 'ZZv1vki4ou4', // YouTube Video ID
+    width: 400,               // Player width (in px)
+    height: 300,              // Player height (in px)
+    playerVars: {
+      autoplay: 1,        // Auto-play the video on load
+      controls: 0,        // Show pause/play buttons in player
+      showinfo: 1,        // Hide the video title
+      modestbranding: 1,  // Hide the Youtube Logo
+      loop: 1,            // Run the video in a loop
+      fs: 1,              // Hide the full screen button
+      cc_load_policy: 1, // Hide closed captions
+      iv_load_policy: 1,  // Hide the Video Annotations
+      autohide: 1         // Hide video controls when playing
+    },
+    events: {
+      onReady: function(e) {
+        e.target.mute();
+      }
+    }
+  });
+ };
+         var cal = new CalendarPopup();
+        function numberChange() {
+            var n = document.getElementById('numberInput').value;
+            document.getElementById('numberText').value = n;
+        }
+        function rangeChange() {
+            var n = document.getElementById('rangeInput').value;
+            document.getElementById('rangeText').value = n;
+        }
+        function chkPassword(value) {
+            //取得元素值
+            //var theObj = document.getElementById("idPwd");
+            //var theObjVal = theObj.value;
+            //var theObjLen = theObjVal.length
+            var flag1 = false, flag2 = false, flag3 = false;
+            //判斷元素值是否為空白，密碼長度是否大於6
+            if (value == "")
+                document.getElementById("pwdresult").innerHTML = "<img src='image/error.png' />密碼不可空白"
+            else if (value.length >= 6) {
+                //如果長度是否大於6，判斷是否包含字母、數字、特殊符號
+                for (var i = 0; i < value.length; i++) {
+                    var theChr = value.charAt(i).toLowerCase();
+                    if (theChr >= "a" && theChr <= "z")
+                        flag1 = true;
+                    else if (theChr >= "0" & theChr <= "9")
+                        flag2 = true;
+                    else if (theChr = /^[!@#%\$^&*]{1,}$/)
+                        flag3 = true;
+                    if (flag1 && flag2 && flag3)
+                        break;
+                }
+                if (flag1 && flag2 && flag3)
+                    document.getElementById("pwdresult").innerHTML = "<img src='image/correct.jpg' width=20px height=20px />密碼正確";
+                else
+                    document.getElementById("pwdresult").innerHTML = "<img src='image/error.png' />密碼錯誤";
+            }
+            else
+                document.getElementById("pwdresult").innerHTML = "<img src='image/error.png' />密碼長度必須超過6個字";
+        }
+        
+        function ShowName(value) {
+            var flag1 = false, flag2 = false;
+            if (value == "") {
+                document.getElementById("nameresult").innerHTML = "<img src='image/error.png' />姓名不可空白"
+                //alert("姓名不可空白");
+            } else if (value.length >= 2) {
+                flag1 = true;
+                if (/.*[\u4e00-\u9fa5]+.*$/.test(value)) {
+                    flag2 = true;
+                } else {
+                    document.getElementById("nameresult").innerHTML = "<img src='image/error.png' />姓名需為中文";
+                }
+                if (flag1 && flag2) document.getElementById("nameresult").innerHTML = "<img src='image/correct.jpg' width=20px height=20px />姓名正確";
+                    //alert("姓名正確"); else alert("姓名不正確")
+            }
+            else {
+                document.getElementById("nameresult").innerHTML = "<img src='image/error.png' />姓名不正確";
+                //alert
+                //    ("姓名長度必須超過2個字");
+            }
+        }
+
+
+        function checkDate() {
+            var getDate = document.getElementById("idDate");
+            var dateString = getDate.value;
+            var date = dateString.split("/");
+            var year = date[0];
+            var month = date[1];
+            var day = date[2];
+            var myDate = new Date(year, month - 1, day)
+            if ((myDate.getMonth() + 1 != month) || (myDate.getDate() != day) || (myDate.getFullYear() != year))
+                document.getElementById("dateRusult").innerHTML = "<img src='image/error.png' width=20px height=20px />日期錯誤";
+            else
+                document.getElementById("dateRusult").innerHTML = "<img src='image/correct.jpg' width=20px height=20px />日期正確";
+        }
+
+    </script>
+        <!--カウンター画像からは配布サイトへリンクが設定されています。また、誤作動、誤表示の原因となりますのでコードの改変、改行は行わないで下さい。
+このコメント部分は削除して頂いても結構です。-->
+<script language ="Javascript">
+document.write('<a href="http://www.free-counter.jp/"></a>');</script>
+    <noscript>
+        <a href="http://hrs.f-counter.com/" >カウンター</a><a href="http://hqm.f-counter.com/">カウンター</a>
+    </noscript>
+   
+
+
+    </script>
+    
+</head>
+<body>
+
+    <div id="allpage">
+        <header>
+            <nav>
+                <nobr id="people">
+        <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td><img src="https://www.f-counter.net/ani1/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></td>
+                    <td><img src="https://www.f-counter.net/ani2/28/1496633287/" alt="カウンター" border="0" style="margin:0px; padding:0px; border:0px; vertical-align:bottom"></td>
+                </tr>
+            </tbody>
+        </table>
+    </nobr>
+                <ul class="menu">
+                    <a href="Index.html"><img class="img" src="image/comeon.jpg" width="60" /></a>
+                    <li><a href="homework1.html">99Method</a></li>
+                    <li><a href="homework2.html">FormCheck</a></li>
+                    <li><a href="homework3.html">StarScore</a></li>
+                    <li><a href="homework4.html">AdRotation</a></li>
+                    <li><a href="homework5.html">Calender</a></li>
+                    <a href=""><img class="img2" src="image/serch.png" width="25" /></a>
+                </ul>
+                <img src="image/toystitle.jpg" width="1024" height="300" />
+            </nav>
+        </header>
+        <div id="content">
+                <article>
+                        <form class="st2">
+            <fieldset class="t1">
+                <legend>個人資料<em>必填</em></legend>
+                <div class="st1">姓名：<input style="width:145px" type="text" onblur="ShowName(this.value)" id="myName">
+                <span id="nameresult"></span><br>
+                    <p>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</p></div>
+                
+
+                <div class="st1">
+                    密碼：<input style="width:145px" type="password" id="psdResult" onblur="chkPassword(this.value)" size="6" />
+                    <span id="pwdresult"></span><br>
+                <p>(1.不可空白，2.至少6個字必須包含英文字母、數字、特殊字元[!@#$%^&*])</p>
+                </div>
+                <!--<div class="st1">
+                        <label>日期：</label>
+                        <input type="date" name="birthday" />
+                    </div>-->
+                <div class="st1">
+                    日期：<input  style="width:145px" type="text" onblur="checkDate()"  id="idDate">
+                    <span id="dateRusult"></span><br>
+                    <p>格式:西元年/月/日 yyyy/MM/dd</p>
+              </div>
+
+              
+                    <!--<div class="st1">
+                        Password:<input type="password" id="idPwd" size="6" /><br />
+                        <input type="button" value="chkPassword" onclick="chkPassword();" />
+                    </div>-->
+
+</fieldset>
+   </form>
+
+</article>
+            <aside>
+                <h2 class="asidetitle">WATCH TV ADS</h2>
+                <div id="muteYouTubeVideoPlayer">
+
+                    <script async src="https://www.youtube.com/iframe_api"></script>
+                </div>
+               
+            </aside>
+
+
+           
+
+        </div>
+        <footer>
+            <h2>&copy;TROYLU.INC.All rights reserved.</h2>
+        </footer>
+
+    </div>
+</body>
+</html>
